@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bergamo Web Lab — Portfolio</title>
+  <meta name="description" content="Galleria fotografica di Bergamo e mini progetti web.">
+  <link rel="preload" href="/styles/main.css" as="style">
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="title">Bergamo Web Lab</h1>
+    <p class="subtitle">Piccolo sito dimostrativo e galleria fotografica personale</p>
+  </header>
+
+  <main>
+    <section id="hero">
+      <p>Benvenuto! Questo è un progetto didattico per esercitarmi con siti statici senza CMS.</p>
+      <a class="btn" href="#gallery">Vai alla galleria</a>
+    </section>
+
+    <section id="gallery" aria-label="Galleria fotografica di Bergamo">
+      <h2>Galleria</h2>
+      <div id="gallery-grid" class="grid">
+        <!-- сюда позже загрузим карточки из data/photos.json -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; <span id="year"></span> Bergamo Web Lab</small>
+  </footer>
+
+  <script src="/scripts/main.js" defer></script>
+</body>
+</html>
