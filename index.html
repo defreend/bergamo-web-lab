@@ -10,25 +10,54 @@
 </head>
 <body>
   <header class="site-header">
-    <h1 class="title">Bergamo Web Lab</h1>
-    <p class="subtitle">Piccolo sito dimostrativo e galleria fotografica personale</p>
+    <div class="container header-inner">
+    <h1 class="logo">
+      <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 17s3-5 6-5 6 5 9 5 5-2 5-2"/>
+        <path d="M2 20h20"/>
+      </svg>
+      Bergamo <span>Web Lab</span>
+    </h1>
+      <button id="menuToggle" class="menu-toggle" aria-label="Apri menu">☰</button>
+      <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#gallery">Galleria</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+    </div>
   </header>
+  <div id="menuOverlay" class="menu-overlay"></div>
 
   <main>
     <section id="hero">
-      <p>Benvenuto! Questo è un progetto didattico per esercitarmi con siti statici senza CMS.</p>
-      <a class="btn" href="#gallery">Vai alla galleria</a>
+      <h2 class="hero-title">Benvenuto nel mio piccolo laboratorio web</h2>
+      <p>
+        Questo progetto nasce dal desiderio di condividere alcune delle mie fotografie di <strong>Bergamo</strong>,
+        una città che continuo a scoprire ogni giorno.  
+        È anche un esperimento didattico: un modo per esercitarmi nella creazione di siti statici senza CMS,
+        curando ogni dettaglio — dal codice alle immagini.
+      </p>
+      <a class="btn" href="#gallery">Scopri la galleria</a>
     </section>
 
     <section id="gallery" aria-label="Galleria fotografica di Bergamo">
       <h2>Galleria</h2>
       <div id="gallery-grid" class="grid"></div>
     </section>
+
+    <section id="contatti" class="contacts">
+      <h2>Contatti</h2>
+      <p>Per collaborazioni o domande scrivimi a:</p>
+      <p><a href="mailto:oleksii.musiienko1@gmail.com">oleksii.musiienko1@gmail.com</a></p>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <small>&copy; <span id="year"></span> Bergamo Web Lab</small>
-  </footer>
+    <small>
+      &copy; <span id="year"></span> Bergamo Web Lab — progetto personale di <strong>Oleksii Musiienko</strong>.
+    </small>
+</footer>
 
   <!-- Fullscreen Lightbox -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Viewer">

@@ -1,6 +1,13 @@
 (async function () {
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
   const galleryEl = document.getElementById('gallery-grid');
 
   const lightboxEl = document.getElementById('lightbox');
@@ -57,6 +64,30 @@
     if (e.key === 'Escape')      closeLightbox();
     if (e.key === 'ArrowRight')  next();
     if (e.key === 'ArrowLeft')   prev();
+  });
+
+  // Mobile menu toggle
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.querySelector('.nav');
+  const overlay = document.getElementById('menuOverlay');
+
+  function closeMenu() {
+    nav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    toggle.textContent = '☰';
+  }
+
+  toggle.addEventListener('click', () => {
+    const opened = nav.classList.toggle('active');
+    overlay.classList.toggle('active', opened);
+    document.body.classList.toggle('menu-open', opened);
+    toggle.textContent = opened ? '×' : '☰';
+  });
+
+  overlay.addEventListener('click', closeMenu);
+  nav.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') closeMenu();
   });
 
   try {
