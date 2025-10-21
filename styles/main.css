@@ -75,3 +75,39 @@ img.lozad.loaded {
   opacity: 1;
   filter: blur(0);
 }
+
+
+/* Lightbox */
+.lightbox{
+  position: fixed; inset:0; z-index:9999;
+  background: rgba(0,0,0,.92);
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; pointer-events:none; transition:opacity .25s ease;
+}
+.lightbox.active{ opacity:1; pointer-events:auto; }
+body.no-scroll{ overflow:hidden; }
+
+.lightbox img{
+  max-width:min(92vw, 1400px);
+  max-height:88vh;
+  border-radius:12px;
+  box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+
+.lb-btn{
+  position:absolute; cursor:pointer;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff; padding:10px 14px; border-radius:999px;
+  backdrop-filter: blur(4px);
+}
+.lb-close{ top:16px; right:16px; font-size:22px; }
+.lb-prev{ left:16px; top:50%; transform:translateY(-50%); }
+.lb-next{ right:16px; top:50%; transform:translateY(-50%); }
+
+.lb-caption{
+  position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+  color:#fff; background:rgba(0,0,0,.4);
+  padding:8px 12px; border-radius:12px; max-width:90vw; text-align:center;
+  font-size:14px;
+}

@@ -22,15 +22,24 @@
 
     <section id="gallery" aria-label="Galleria fotografica di Bergamo">
       <h2>Galleria</h2>
-      <div id="gallery-grid" class="grid">
-        <!-- сюда позже загрузим карточки из data/photos.json -->
-      </div>
+      <div id="gallery-grid" class="grid"></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <small>&copy; <span id="year"></span> Bergamo Web Lab</small>
   </footer>
+
+  <!-- Fullscreen Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Viewer">
+    <button class="lb-btn lb-close" aria-label="Chiudi (Esc)">×</button>
+    <button class="lb-btn lb-prev" aria-label="Precedente (←)">←</button>
+
+    <img id="lightbox-img" alt="">
+    <div id="lightbox-caption" class="lb-caption"></div>
+
+    <button class="lb-btn lb-next" aria-label="Successivo (→)">→</button>
+  </div>
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   <script src="scripts/main.js" defer></script>
