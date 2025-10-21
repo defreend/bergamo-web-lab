@@ -1,6 +1,5 @@
 (async function () {
   document.getElementById('year').textContent = new Date().getFullYear();
-
   const galleryEl = document.getElementById('gallery-grid');
 
   try {
@@ -12,7 +11,7 @@
       card.className = 'card';
 
       card.innerHTML = `
-        <img src="${p.src}" alt="${p.title}" loading="lazy">
+        <img class="lozad" data-src="${p.src}" alt="${p.title}" loading="lazy">
         <div class="meta">
           <strong>${p.title}</strong><br>
           <span>${p.desc}</span>
@@ -21,6 +20,14 @@
 
       galleryEl.appendChild(card);
     });
+
+    const observer = lozad('.lozad', {
+      loaded: el => {
+        el.classList.add('loaded'); // можно добавить анимацию
+      }
+    });
+    observer.observe();
+    
   } catch (err) {
     galleryEl.innerHTML = `<p style="color:red;">Impossibile caricare la galleria.</p>`;
   }

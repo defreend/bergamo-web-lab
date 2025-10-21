@@ -64,3 +64,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
   font-size: 14px;
   color: #444;
 }
+
+img.lozad {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+img.lozad.loaded {
+  opacity: 1;
+}
