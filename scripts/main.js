@@ -79,8 +79,9 @@
 
     const observer = lozad('.lozad', {
       loaded: el => {
-
-        requestAnimationFrame(() => el.classList.add('loaded'));
+        el.addEventListener('load', () => {
+          requestAnimationFrame(() => el.classList.add('loaded'));
+        });
       }
     });
     observer.observe();
