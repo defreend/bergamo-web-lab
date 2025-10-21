@@ -22,12 +22,10 @@
     });
 
     const observer = lozad('.lozad', {
-      loaded: el => {
-        el.classList.add('loaded'); // можно добавить анимацию
-      }
+      loaded: el => el.classList.add('loaded')
     });
     observer.observe();
-    
+
   } catch (err) {
     galleryEl.innerHTML = `<p style="color:red;">Impossibile caricare la galleria.</p>`;
   }

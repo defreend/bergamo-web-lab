@@ -67,8 +67,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
 
 img.lozad {
   opacity: 0;
-  transition: opacity 0.6s ease-out;
+  filter: blur(8px);
+  transition: opacity 1s ease-out, filter 1s ease-out;
 }
+
 img.lozad.loaded {
   opacity: 1;
+  filter: blur(0);
 }
